@@ -5,6 +5,8 @@ import Grid from "../../component/grid";
 import Box from "../../component/box";
 
 import PostCreate from "../post-create";
+import PostItem from "../post-item";
+
 import { Alert, Skeleton, LOAD_STATUS } from "../../component/load";
 
 import { getDate } from "../../util/getDate";
@@ -80,7 +82,7 @@ export default function Container() {
           ) : (
             data.list.map((item) => (
               <Fragment key={item.id}>
-                {item.username} - {item.date}
+                <PostItem {...item} />
               </Fragment>
             ))
           )}
